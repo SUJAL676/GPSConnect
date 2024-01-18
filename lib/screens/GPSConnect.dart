@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HeyDrop extends StatefulWidget {
-  const HeyDrop({super.key});
+class GPSConnect extends StatefulWidget {
+  const GPSConnect({super.key});
 
   @override
-  State<HeyDrop> createState() => _HeyDropState();
+  State<GPSConnect> createState() => _GPSConnect();
 }
 
-class _HeyDropState extends State<HeyDrop> {
+class _GPSConnect extends State<GPSConnect> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +37,7 @@ class _HeyDropState extends State<HeyDrop> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          Text("HeyDrop",style: GoogleFonts.poppins(
+                          Text("GPS Connect",style: GoogleFonts.poppins(
                               fontSize: 14,
                               color: Colors.white,
                               fontWeight: FontWeight.w500

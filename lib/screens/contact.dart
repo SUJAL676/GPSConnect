@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:influence_techno_lab/screens/ContactTiles.dart';
-import 'package:influence_techno_lab/screens/heyDrop.dart';
+import 'package:influence_techno_lab/screens/GPSConnect.dart';
+
+
+
 
 class ContactScreen extends StatefulWidget {
   const ContactScreen({super.key});
@@ -85,7 +88,7 @@ class _ContactScreenState extends State<ContactScreen> {
                         {
                           return GestureDetector(
                               onTap: (){
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HeyDrop()));
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>GPSConnect()));
                               },
                               child: ContactTiles());
                         },

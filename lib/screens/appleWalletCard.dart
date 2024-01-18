@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:influence_techno_lab/screens/manageLink.dart';
-
+import 'package:qr_flutter/qr_flutter.dart';
 
 class AppleWalletCard extends StatefulWidget {
-  const AppleWalletCard({super.key});
+  final Map<dynamic,dynamic>map ;
+  const AppleWalletCard({super.key, required this.map});
 
   @override
   State<AppleWalletCard> createState() => _AppleWalletCardState();
@@ -13,9 +14,10 @@ class AppleWalletCard extends StatefulWidget {
 class _AppleWalletCardState extends State<AppleWalletCard> {
 
 
-
   @override
   Widget build(BuildContext context) {
+
+    // print(map);
 
     List<Widget> list = [
       Card1(),
@@ -75,7 +77,7 @@ class _AppleWalletCardState extends State<AppleWalletCard> {
             Container(
               height: 500,
               width: double.infinity,
-              margin: EdgeInsets.only(left: 40),
+              margin: EdgeInsets.only(left: 15),
               child: ListView.builder(
                 itemBuilder: (BuildContext context, int index) {
                   return list[index];
@@ -207,7 +209,7 @@ class _AppleWalletCardState extends State<AppleWalletCard> {
 
                       SizedBox(height: 20,),
 
-                      Text("Your Name",style: GoogleFonts.poppins(
+                      Text("${widget.map["FirstName"]} ${widget.map["LastName"]}",style: GoogleFonts.poppins(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                         color: Colors.white
@@ -308,7 +310,7 @@ class _AppleWalletCardState extends State<AppleWalletCard> {
   Widget Card1()
   {
     return Container(
-      width: 330,
+      width: 360,
       height: 400,
       child: Stack(
         children: [
@@ -340,7 +342,7 @@ class _AppleWalletCardState extends State<AppleWalletCard> {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(top: 10),
-                      child: Text("Your Name",style: GoogleFonts.poppins(
+                      child: Text("${widget.map["FirstName"]} ${widget.map["LastName"]}",style: GoogleFonts.poppins(
                         fontSize: 22,
                         fontWeight: FontWeight.w400
                       ),),
@@ -369,8 +371,8 @@ class _AppleWalletCardState extends State<AppleWalletCard> {
                           fontSize: 12,
                           fontWeight: FontWeight.w400
                         ),),
-                        Text("+1 (555) 555-5555",style: GoogleFonts.poppins(
-                            fontSize: 12,
+                        Text(widget.map["UserMobile"],style: GoogleFonts.poppins(
+                            fontSize: 10,
                             fontWeight: FontWeight.w400
                         ),),
                       ],
@@ -388,8 +390,8 @@ class _AppleWalletCardState extends State<AppleWalletCard> {
                             fontSize: 12,
                             fontWeight: FontWeight.w400
                         ),),
-                        Text("your@email.com",style: GoogleFonts.poppins(
-                            fontSize: 12,
+                        Text(widget.map["UserEmailID"],style: GoogleFonts.poppins(
+                            fontSize: 10,
                             fontWeight: FontWeight.w400
                         ),),
                       ],
@@ -403,7 +405,11 @@ class _AppleWalletCardState extends State<AppleWalletCard> {
                 Center(
                   child: SizedBox(
                     height: 130,
-                      child: Image.asset("asset/qr.jpeg")),
+                      child: QrImageView(
+                        data: widget.map["qrCode"],
+                        version: QrVersions.auto,
+                        size: 130,
+                      )),
                 )
               ],
             ),

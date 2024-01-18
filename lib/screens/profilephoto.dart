@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:influence_techno_lab/process.dart';
 import 'package:influence_techno_lab/screens/appleWalletCard.dart';
 
 class ProfilePhoto extends StatefulWidget {
@@ -76,7 +77,7 @@ class _ProfilePhotoState extends State<ProfilePhoto> {
                  alignment: Alignment.bottomCenter,
                  child: GestureDetector(
                    onTap: (){
-                     Navigator.of(context).push(MaterialPageRoute(builder: (context)=>AppleWalletCard()));
+                     Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Process()));
                    },
                    child: Container(
                      height: 60,

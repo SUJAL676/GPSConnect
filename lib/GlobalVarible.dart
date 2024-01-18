@@ -1,3 +1,7 @@
-String FullName="";
-String WorkEmail="";
-String PhoneNumber="";
+
+class Global{
+
+  Map<dynamic,dynamic> Gmap ={};
+  var Name= "";
+
+}

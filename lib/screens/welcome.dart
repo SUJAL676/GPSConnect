@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:influence_techno_lab/api.dart';
 import 'package:influence_techno_lab/screens/profilephoto.dart';
 
 class Welcome extends StatefulWidget {
@@ -18,7 +19,7 @@ class _WelcomeState extends State<Welcome> {
         child: AppBar(
           backgroundColor: Colors.white,
           centerTitle: true,
-          title: Text("Welcome to HeyDrop",style: GoogleFonts.poppins(
+          title: Text("Welcome to GPS Connect",style: GoogleFonts.poppins(
             fontSize: 26,
             fontWeight: FontWeight.w600
           ),),
@@ -65,6 +66,9 @@ class _WelcomeState extends State<Welcome> {
 
               GestureDetector(
                   onTap: (){
+
+                    // loginUser();
+
                     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>ProfilePhoto()));
                   },
                   child: Continue())
