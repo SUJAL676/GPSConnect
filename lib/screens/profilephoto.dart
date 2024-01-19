@@ -77,7 +77,7 @@ class _ProfilePhotoState extends State<ProfilePhoto> {
                  alignment: Alignment.bottomCenter,
                  child: GestureDetector(
                    onTap: (){
-                     Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Process()));
+                     Navigator.of(context).push(MaterialPageRoute(builder: (context)=>AppleWalletCard()));
                    },
                    child: Container(
                      height: 60,

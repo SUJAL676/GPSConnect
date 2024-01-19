@@ -4,8 +4,8 @@ import 'package:influence_techno_lab/screens/manageLink.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class AppleWalletCard extends StatefulWidget {
-  final Map<dynamic,dynamic>map ;
-  const AppleWalletCard({super.key, required this.map});
+  // final Map<dynamic,dynamic>map ;
+  const AppleWalletCard({super.key});
 
   @override
   State<AppleWalletCard> createState() => _AppleWalletCardState();
@@ -50,6 +50,7 @@ class _AppleWalletCardState extends State<AppleWalletCard> {
       ),
 
       body: Container(
+        padding: EdgeInsets.only(bottom: 15),
         width: double.infinity,
         height: MediaQuery.sizeOf(context).height,
         child: Column(
@@ -57,19 +58,27 @@ class _AppleWalletCardState extends State<AppleWalletCard> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
 
-            Text("When you meet someone, simply open your" , style: GoogleFonts.poppins(
-                fontSize: 16,
-                fontWeight: FontWeight.w500)),
+            Container(
+              child: Column(
+                children: [
+                  Text("When you meet someone, simply open your" , style: GoogleFonts.poppins(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500)),
 
-            SizedBox(
-              height: 4,
+                  SizedBox(
+                    height: 4,
+                  ),
+
+                  Text("Apple Wallet card to share your profile" , style: GoogleFonts.poppins(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500)),
+
+                  SizedBox(height: 10,),
+                ],
+              ),
             ),
 
-            Text("Apple Wallet card to share your profile" , style: GoogleFonts.poppins(
-                fontSize: 16,
-                fontWeight: FontWeight.w500)),
 
-            SizedBox(height: 30,),
 
             // SizedBox(height: 30,),
 
@@ -96,13 +105,13 @@ class _AppleWalletCardState extends State<AppleWalletCard> {
 
             Expanded(
               child: Container(
-                margin: EdgeInsets.all(15),
+                margin: EdgeInsets.all(10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Container(
-                      height: 55,
+                      height: 45,
                       width: double.infinity,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -127,7 +136,7 @@ class _AppleWalletCardState extends State<AppleWalletCard> {
                         Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ManageLink()));
                       },
                       child: Container(
-                        height: 55,
+                        height: 45,
                         width: double.infinity,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -163,13 +172,13 @@ class _AppleWalletCardState extends State<AppleWalletCard> {
   {
     return Container(
       width: 290,
-      height: 600,
+      height: 450,
       // color: Colors.black87,
       child: Stack(
         children: [
           Container(
             width: 265,
-            height: 500,
+            height: 450,
             margin: EdgeInsets.all(15).copyWith(top: 10,right: 0),
             decoration: BoxDecoration(
               color: Color.fromARGB(255, 255, 78, 34),
@@ -209,10 +218,16 @@ class _AppleWalletCardState extends State<AppleWalletCard> {
 
                       SizedBox(height: 20,),
 
-                      Text("${widget.map["FirstName"]} ${widget.map["LastName"]}",style: GoogleFonts.poppins(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white
+                      // Text("${widget.map["FirstName"]} ${widget.map["LastName"]}",style: GoogleFonts.poppins(
+                      //   fontSize: 16,
+                      //   fontWeight: FontWeight.w500,
+                      //   color: Colors.white
+                      // ),),
+
+                      Text("Ajay Jain",style: GoogleFonts.poppins(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white
                       ),),
 
                       Text("Job Title",style: GoogleFonts.poppins(
@@ -310,7 +325,7 @@ class _AppleWalletCardState extends State<AppleWalletCard> {
   Widget Card1()
   {
     return Container(
-      width: 360,
+      width: 320,
       height: 400,
       child: Stack(
         children: [
@@ -342,9 +357,13 @@ class _AppleWalletCardState extends State<AppleWalletCard> {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(top: 10),
-                      child: Text("${widget.map["FirstName"]} ${widget.map["LastName"]}",style: GoogleFonts.poppins(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w400
+                      // child: Text("${widget.map["FirstName"]} ${widget.map["LastName"]}",style: GoogleFonts.poppins(
+                      //   fontSize: 22,
+                      //   fontWeight: FontWeight.w400
+                      // ),),
+                      child: Text("Ajay Jain",style: GoogleFonts.poppins(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w400,
                       ),),
                     ),
                     SizedBox(width: 20,),
@@ -371,9 +390,13 @@ class _AppleWalletCardState extends State<AppleWalletCard> {
                           fontSize: 12,
                           fontWeight: FontWeight.w400
                         ),),
-                        Text(widget.map["UserMobile"],style: GoogleFonts.poppins(
+                        // Text(widget.map["UserMobile"],style: GoogleFonts.poppins(
+                        //     fontSize: 10,
+                        //     fontWeight: FontWeight.w400
+                        // ),),
+                        Text("9873230398",style: GoogleFonts.poppins(
                             fontSize: 10,
-                            fontWeight: FontWeight.w400
+                            fontWeight: FontWeight.w400,
                         ),),
                       ],
                     ),
@@ -390,10 +413,16 @@ class _AppleWalletCardState extends State<AppleWalletCard> {
                             fontSize: 12,
                             fontWeight: FontWeight.w400
                         ),),
-                        Text(widget.map["UserEmailID"],style: GoogleFonts.poppins(
+                        // Text(widget.map["UserEmailID"],style: GoogleFonts.poppins(
+                        //     fontSize: 10,
+                        //     fontWeight: FontWeight.w400
+                        // ),),
+
+                        Text("ajay.jain@influencetechnolabs.com",style: GoogleFonts.poppins(
                             fontSize: 10,
-                            fontWeight: FontWeight.w400
+                            fontWeight: FontWeight.w400,
                         ),),
+
                       ],
                     )
 
@@ -405,11 +434,13 @@ class _AppleWalletCardState extends State<AppleWalletCard> {
                 Center(
                   child: SizedBox(
                     height: 130,
-                      child: QrImageView(
-                        data: widget.map["qrCode"],
-                        version: QrVersions.auto,
-                        size: 130,
-                      )),
+                      // child: QrImageView(
+                      //   data: widget.map["qrCode"],
+                      //   version: QrVersions.auto,
+                      //   size: 130,
+                      // )
+                    child: Image.asset("asset/qr.jpeg"),
+                  ),
                 )
               ],
             ),

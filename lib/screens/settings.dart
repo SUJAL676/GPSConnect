@@ -26,7 +26,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               children: [
                 Container(
                   padding: EdgeInsets.only(bottom: 2),
-                  child: Text("Settings",style: GoogleFonts.poppins(
+                  child: Text("Setting",style: GoogleFonts.poppins(
                     fontSize: 20,
                     fontWeight: FontWeight.w600
                   ),),
@@ -50,6 +50,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
         body: Expanded(
           child: Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
             padding: EdgeInsets.only(left: 15,right: 15),
             color: Color.fromARGB(255, 243, 243, 243),
             child: Column(
@@ -257,7 +259,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Text("Ask a question",style: GoogleFonts.poppins(
               fontSize: 15,
@@ -265,9 +267,21 @@ class _SettingsScreenState extends State<SettingsScreen> {
               color: Colors.black
           ),),
 
-          SizedBox(width: 210,),
+          // SizedBox(width: 180,),
 
-          islogout ? Image.asset("asset/logout.png",height: 20,) :Image.asset("asset/next.png",height: 25,)
+          islogout ? Expanded(
+            child: Container(
+              child: Align(
+                alignment: Alignment.centerRight,
+                  child: Image.asset("asset/logout.png",height: 20,)),
+            ),
+          ) :Expanded(
+            child: Container(
+              child: Align(
+                alignment: Alignment.centerRight,
+                  child: Image.asset("asset/next.png",height: 25,)),
+            ),
+          )
         ],
       ),
     );
